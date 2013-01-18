@@ -1,0 +1,36 @@
+	<!-- HEADER -->
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+        <h1>Select PlayList</h1>
+    </div>
+
+	<!-- CONTENT -->
+    <div data-role="content">
+    	<ul data-role="listview" data-inset="true" data-dividertheme="a">
+			<li data-role="list-divider">
+				Target Book
+			</li>
+    		<li>
+				<?php echo $this->Html->image($xml->Items->Item->SmallImage->URL); ?>
+				<h3><?php echo $xml->Items->Item->ItemAttributes->Title;?></h3>
+				<p><?php echo $xml->Items->Item->ItemAttributes->Author;?></p>
+    		</li>
+		</ul>
+
+    	<ul data-role="listview"  data-inset="true" data-dividertheme="a">
+			<li data-role="list-divider">
+				Play List
+			</li>
+			<?php foreach($playlists as $pl):?>
+				<?php if($pl['Playlist']['youtube_img']): ?>
+					<li>
+						<a href="http://cahier-sauvage.boo.jp/blm_dev/playlists/video_play/<?php echo $pl['Playlist']['amazon_id']."/".$pl['Playlist']['youtube_id'];?>" >
+							<?php echo $this->Html->image($pl['Playlist']['youtube_img']); ?>
+							<h3><?php echo $pl['Playlist']['youtube_name']; ?></h3>
+							<p><?php echo $pl['Account']['name']; ?></p>
+						</a>
+					</li>
+				<?php endif; ?>
+			<?php endforeach; ?>
+    	</ul>
+    </div>
+

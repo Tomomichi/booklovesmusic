@@ -1,0 +1,68 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('playList/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->image('playList/step_01.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		
+		<!-- Masonry -->
+		<div class="grid_8 underspace">
+			<div class="middle_title">
+				<?php print $this->Html->image('playList/title_top_02.jpg');?>
+			</div>
+			<div id="container">  
+				<?php foreach($books as $book):?>
+					<?php if($book['Playlist']['amazon_img']): ?>
+						<div class="box">
+							<?php if( strtotime($book['Playlist']['created']) > strtotime("-1 week". date("Y-n-j")) ): ?>
+								<div class="side-corner-tag">
+									<?php
+										print $this->Html->link(
+											$this->Html->image($book['Playlist']['amazon_img']),
+											array('controller'=>'playlists', 'action'=>'list_search', $book['Playlist']['amazon_id']),
+											array('escape' => false)
+										);
+									?>
+									<p><span>new</span></p>
+								</div>
+							<?php else: ?>
+									<?php
+										print $this->Html->link(
+											$this->Html->image($book['Playlist']['amazon_img']),
+											array('controller'=>'playlists', 'action'=>'list_search', $book['Playlist']['amazon_id']),
+											array('escape' => false)
+										);
+									?>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="grid_8 pl_banner bigspace">
+			<!-- 春樹特集 -->
+			<?php
+				print $this->Html->link(
+					$this->Html->image("home/haruki_banner.jpg"),
+					array('controller'=>'features', 'action'=>'haruki'),
+					array('escape' => false)
+				);
+			?>
+			<!-- ブンゴウフリック -->
+			<?php
+				print $this->Html->link(
+					$this->Html->image("home/bungoflick_banner.jpg"),
+					'http://itunes.apple.com/jp/app/bungoufurikku/id489185834?mt=8',
+					array('escape' => false, 'target'=>'_blank')
+				);
+			?>
+		</div>
+		
+
+	</div>
+

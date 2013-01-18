@@ -1,0 +1,196 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('mypage/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+
+		<!-- プロフィール -->
+		<div id="profile">
+			<?php echo $this->Html->link(
+				$this->Html->image("http://img.tweetimag.es/i/".$account['Account']['name']."_b"),
+				"https://twitter.com/#!/".$account['Account']['name'],
+				array('escape' => false, 'target'=>'_blank' )
+			);?>
+			<p>
+				<?php echo $this->Html->link(
+					$account['Account']['name'],
+					"https://twitter.com/#!/".$account['Account']['name'],
+					array('target'=>'_blank' )
+				);?>
+			</p>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		<div class="grid_8 underspace"></div>	
+		
+		<!-- お気に入りPlayList一覧 -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('mypage/title_02.jpg');?>
+			<div class="gray_box result_index">
+				<?php if($favlists): ?>
+				<?php
+					$count = 0;
+					foreach($favlists as $fav):
+
+						if($count!=0){ print '<hr>';}
+						$count++;
+				?>
+						<div class="list_result">
+							<div class="list_image">
+								<?php echo $this->Html->link(
+									$this->Html->Image($fav['Playlist']['youtube_img']),
+									array("controller"=>"playlists", "action"=>"video_play", $fav['Playlist']['amazon_id'], $fav['Playlist']['youtube_id']),
+   									array('escape' => false)
+								);?>
+							</div>
+							<div class="list_attr">
+								<div class="list_title">
+									<p><?php print $fav['Playlist']['youtube_name'];?></p>
+								</div>
+								<div class="list_play">
+									<p>bookDJ：
+										<?php echo $this->Html->link(
+											$fav['Account']['name'],
+											array('controller'=>'mypages', 'action'=>'index', $fav['Playlist']['user_id'])
+										);?>
+									</p>
+									<div id="play_btn">
+										<?php print $this->Html->Image("playList/play.png"); ?>
+										<?php echo $this->Html->link(
+											"  Play",
+											array("controller"=>"playlists", "action"=>"video_play", $fav['Playlist']['amazon_id'], $fav['Playlist']['youtube_id'] )
+										);?>
+									</div>
+								</div>
+								<div class="list_tracks">
+								<!--
+									<ul>
+										<?php
+											for($i=1;$i<4;$i++){
+												print "<li>[0".$i."] ".$fav_videos[$fav['id']][$i-1]->title."</li>";
+											}
+										?>
+									</ul>
+								-->
+								</div>
+							</div>
+						</div>
+						
+					
+				<?php
+					endforeach;
+				?>
+				<?php else: ?>
+					<?php print "<br>※まだお気に入りしたPlayListがありません";?>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		<div class="grid_8 underspace"></div>	
+
+		<!-- つくったPlayList一覧 -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('mypage/title_01.jpg');?>
+			<div class="gray_box result_index">
+				<?php if($playlists): ?>
+				<?php
+					$count = 0;
+					foreach($playlists as $pl):
+
+						if($count!=0){ print '<hr>';}
+						$count++;
+				?>
+						<div class="list_result">
+							<div class="list_image">
+								<?php echo $this->Html->link(
+									$this->Html->Image($pl['Playlist']['youtube_img']),
+									array("controller"=>"playlists", "action"=>"video_play", $pl['Playlist']['amazon_id'], $pl['Playlist']['youtube_id']),
+   									array('escape' => false)
+								);?>
+							</div>
+							<div class="list_attr">
+								<!-- 編集ボタン -->
+								<?php if($user_flg): ?>
+									<div id="edit_btn">
+										<div id="edit">
+											<?php echo $this->Html->link(
+												$this->Html->Image("common/edit.png"),
+												array("controller"=>"mypages", "action"=>"edit_list", $account['Account']['id'], $pl['Playlist']['id']),
+			   									array('escape' => false)
+											);?>
+											<?php echo $this->Html->link(
+												'Edit',
+												array("controller"=>"mypages", "action"=>"edit_list", $account['Account']['id'], $pl['Playlist']['id'])
+											);?>
+										</div>
+	<!--									
+										<div id="delete">
+											<?php echo $this->Html->link(
+												$this->Html->Image("common/cancel.png"),
+												array("controller"=>"mypages", "action"=>"delete_list", $account['Account']['id'], $pl['Playlist']['id']),
+			   									array('escape' => false)
+											);?>
+											<?php echo $this->Html->link(
+												'Delete',
+												array("controller"=>"mypages", "action"=>"delete_list", $account['Account']['id'], $pl['Playlist']['id'])
+											);?>
+										</div>
+	-->
+									</div>
+								<?php endif; ?>
+								<!-- Playlist情報 -->
+								<div class="list_title">
+									<p><?php print $pl['Playlist']['youtube_name'];?></p>
+								</div>
+								<div class="list_play">
+									<p>bookDJ：
+										<?php echo $this->Html->link(
+											$pl['Account']['name'],
+											array('controller'=>'mypages', 'action'=>'index', $pl['Account']['id'])
+										);?>
+									</p>
+									<div id="play_btn">
+										<?php print $this->Html->Image("playList/play.png"); ?>
+										<?php echo $this->Html->link(
+											"  Play",
+											array("controller"=>"playlists", "action"=>"video_play", $pl['Playlist']['amazon_id'], $pl['Playlist']['youtube_id'] )
+										);?>
+									</div>
+								</div>
+								<div class="list_tracks">
+								<!--
+									<ul>
+										<?php
+											for($i=1;$i<4;$i++){
+												print "<li>[0".$i."] ".$videos[$pl['Playlist']['id']][$i-1]->title."</li>";
+											}
+										?>
+									</ul>
+								-->
+								</div>
+							</div>
+						</div>
+						
+					
+				<?php
+					endforeach;
+				?>
+				<?php else: ?>
+					<?php print "<br>※まだ登録したPlayListがありません";?>
+				<?php endif; ?>
+			</div>
+			<!-- Pagination -->
+			<div id="pagination">
+				<?php 
+					if($this->Paginator->numbers()){
+						echo $this->Paginator->prev('≪ Previous', null, null, array('class' => 'disabled'))."　";
+						echo $this->Paginator->numbers();
+						echo "　".$this->Paginator->next('Next ≫', null, null, array('class' => 'disabled'));
+					}
+				?>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+

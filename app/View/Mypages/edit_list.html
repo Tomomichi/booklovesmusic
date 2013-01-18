@@ -1,0 +1,71 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('mypage/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+
+		<!-- Topにもどる -->
+		<div class="grid_8 underspace">
+			<?php echo $this->Html->link(
+				'>> MyPageトップに戻る',
+				array("controller"=>"mypages", "action"=>"index", $account['Account']['id'])
+			);?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		
+		<!-- じぶんでプレイリストを作成 -->
+		<div class="grid_8 underspace">
+			<div>
+				<?php print $this->Html->image('mypage/title_edit_01.jpg');?>
+				<div class="gray_box result_index">
+					<?php echo $this->Form->create('Mypage', array( 'type'=>'POST', 'action'=>'edit_complete/'.$account['Account']['id'].'/'.$list['Playlist']['id'], 'name'=>'videolist_form', 'id'=>'videolist_form') ); ?>
+						<div class="edit_list">
+							<!-- タイトル -->
+							<div class="edit_title">
+								<p>Title:</p>
+								<?php echo $this->Form->text('list_data.list_title', array('value'=>$list['Playlist']['youtube_name'], 'disabled'=>true ) );?>
+							</div>
+							<!-- 動画選択 -->
+							<div class="edit_tracks">
+								<p>Tracks:</p>
+								<ul class="video_box">
+									<!-- 動画① -->
+								  <li id="v_box01" <?php if($videoIDs[0]):?>style="background:url(http://img.youtube.com/vi/<?php echo $videoIDs[0]; ?>/1.jpg); background-size:cover"<?php endif;?> >
+									<?php $link_01 = "TINY.box.show({iframe:'". $this->Html->webroot."addlists/search_video/hogehoge/01"."',boxid:'frameless',width:700,height:600,fixed:false,maskid:'blackmask',maskopacity:40,closejs:function(){closeJS()}})"; ?>
+									<a onclick="<?php print $link_01;?>"></a>
+									<?php echo $this->Form->hidden('video_data.video_01', array('id' => 'vform_01', 'value'=>"$videoIDs[0]"));?>
+								  </li>
+									<!-- 動画② -->
+								  <li id="v_box02" <?php if($videoIDs[1]):?>style="background:url(http://img.youtube.com/vi/<?php echo $videoIDs[1]; ?>/1.jpg); background-size:cover"<?php endif;?> >
+									<?php $link_02 = "TINY.box.show({iframe:'". $this->Html->webroot."addlists/search_video/hogehoge/02"."',boxid:'frameless',width:700,height:600,fixed:false,maskid:'blackmask',maskopacity:40,closejs:function(){closeJS()}})"; ?>
+									<a onclick="<?php print $link_02;?>"></a>
+									<?php echo $this->Form->hidden('video_data.video_02', array('id' => 'vform_02', 'value'=>"$videoIDs[1]"));?>
+								  </li>
+									<!-- 動画③ -->
+								  <li id="v_box03" <?php if($videoIDs[2]):?>style="background:url(http://img.youtube.com/vi/<?php echo $videoIDs[2]; ?>/1.jpg); background-size:cover"<?php endif;?> >
+									<?php $link_03 = "TINY.box.show({iframe:'". $this->Html->webroot."addlists/search_video/hogehoge/03"."',boxid:'frameless',width:700,height:600,fixed:false,maskid:'blackmask',maskopacity:40,closejs:function(){closeJS()}})"; ?>
+									<a onclick="<?php print $link_03;?>"></a>
+									<?php echo $this->Form->hidden('video_data.video_03', array('id' => 'vform_03', 'value'=>"$videoIDs[2]"));?>
+								  </li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+							<!-- キャプション -->
+							<div class="edit_caption">
+								<p>Caption:</p>
+								<?php echo $this->Form->textarea( 'list_data.caption', array( 'value'=>(string)$yt_xml->subtitle, 'disabled'=>true ));?>
+							</div>
+							<div class="reg_btn">
+								<?php echo $this->Form->submit( "この内容で保存する", array('div'=>false) );?>
+							</div>
+						</div>
+					<?php echo $this->Form->end();?>
+				</div>
+			</div>
+		</div>	
+		<div class="grid_8 underspace"></div>
+		<div class="grid_8 underspace"></div>
+
+	</div>
+

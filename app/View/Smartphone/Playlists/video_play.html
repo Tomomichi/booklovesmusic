@@ -1,0 +1,24 @@
+	<!-- HEADER -->
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+        <h1>Play Music</h1>
+		<a href="#" class="ui-btn-right">Tweet</a>
+	</div>
+
+	<!-- CONTENT -->
+    <div data-role="content">
+    	<ul data-role="listview" data-inset="true" data-dividertheme="a">
+			<li data-role="list-divider">
+				Target Book
+			</li>
+    		<li>
+				<?php echo $this->Html->image($xml->Items->Item->SmallImage->URL); ?>
+				<h3><?php echo $xml->Items->Item->ItemAttributes->Title;?></h3>
+				<p><?php echo $xml->Items->Item->ItemAttributes->Author;?></p>
+    		</li>
+		</ul>
+
+    	<h2>PlayListを再生する</h2>
+		<iframe height="300px" width="400px" src="http://www.youtube.com/embed/videoseries?list=PL<?php print $video_id;?>&amp;hl=ja_JP" frameborder="0" allowfullscreen></iframe>
+    	
+    </div>
+

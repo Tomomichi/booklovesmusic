@@ -1,0 +1,43 @@
+<!-- プレイリスト一覧 -->
+	<?php echo $this->Html->Image("addList/title_make_02.jpg", array('class'=>'modal_title'));?>
+	<div>
+			<?php
+				if(isset($playlists)):
+					$count = 0;
+					foreach($playlists as $pl):
+						if($count!=0){ print '<hr>';}
+						$count++;
+			?>				
+					<div class="search_result">
+						<div class="list_image">
+							<?php
+	//							print $this->Html->image("$this->Playlist->getThumImage($yt_pl_id)");
+							?>
+							<img src="<?php print $this->Html->webroot(IMAGES_URL."playList/himatotaikutu.jpg");?>">
+						</div>
+						<div class="list_attr">
+							<div class="list_title">
+								<p><?php print $pl->title;?></p>
+							</div>
+							<div class="list_play">
+								<?php
+									$yt_pl_id = substr($pl->id, -16);
+	/*								print $this->Html->link(
+										$this->Html->image("addList/add_btn.jpg"),
+										array('controller'=>'addlists', 'action'=>'add_complete', $a_key, $yt_pl_id),
+										array('escape' => false)
+									);
+	*/							?>
+								<p>作成者：<?php print $pl->author->name;?></p>
+								<?php echo $this->Html->Image("addList/add_btn.jpg", array('class'=>'add_list', 'id'=>$yt_pl_id));?>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+			<?php
+					endforeach;
+				endif;
+			?>
+	</div>
+
+

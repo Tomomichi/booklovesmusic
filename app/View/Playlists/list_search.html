@@ -1,0 +1,108 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->Image("playList/title.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->Image("playList/step_02.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		
+		<!-- プレイリスト一覧 -->
+		<div class="grid_8 underspace">
+			<div>
+			<?php print $this->Html->Image("playList/title_list_01.jpg"); ?>
+			<div class="clear underspace"></div>
+
+			<!-- ひもづく本の紹介 -->
+			<div class="play_book underspace list_book">
+				<?php
+          $a_img = $xml->Items->Item->SmallImage->URL;
+          if(!$a_img){
+            $a_img = "common/noImage.jpg";
+          }
+					$ISBN = $xml->Items->Item->ASIN;
+					print $this->Html->link(
+						$this->Html->image($a_img),
+						"http://www.amazon.co.jp/gp/product/".$ISBN."/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=".$ISBN,
+						array('escape' => false, 'target'=>'_blank')
+					);
+				?>
+				
+				<p id="title">
+					<a href="http://www.amazon.co.jp/gp/product/<?php print $ISBN;?>/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=<?php print $ISBN;?>" target="_blank">
+						<?php echo $xml->Items->Item->ItemAttributes->Title;?>
+					</a><br/>
+					<?php echo $xml->Items->Item->ItemAttributes->Author;?>
+				</p>
+				<p id="caption">
+				</p>
+				<p class="clear"></p>
+			</div>
+			<div class="grid_8 underspace"></div>
+
+			<!-- プレイリスト一覧 -->
+				<div class="gray_box result_index underspace">
+				<div class="grid_8 underspace"></div>	
+				<?php
+					$count = 0;
+					foreach($playlists as $pl):
+
+						if($count!=0){ print '<hr>';}
+						$count++;
+						$pl = $pl['Playlist'];
+
+						//PlayList情報から先頭の動画のIDを抜出
+						$href = $videos[$pl['id']][0]->link[0]->attributes()->href;
+						$v_id = substr($href, 31, 11);
+				?>
+						<div class="list_result">
+							<div class="list_image">
+								<?php echo $this->Html->link(
+									$this->Html->Image("http://img.youtube.com/vi/".$v_id."/0.jpg"),
+									array("controller"=>"playlists", "action"=>"video_play", $pl['amazon_id'], $pl['youtube_id']),
+   									array('escape' => false)
+								);?>
+							</div>
+							<div class="list_attr">
+								<div class="list_title">
+									<p><?php print $pl['youtube_name'];?></p>
+								</div>
+								<div class="list_play">
+									<p>bookDJ：
+										<?php echo $this->Html->link(
+											$DJs[$pl['id']],
+											array('controller'=>'mypages', 'action'=>'index', $pl['user_id'])
+										);?>
+									</p>
+									<div id="play_btn">
+										<?php print $this->Html->Image("playList/play.png"); ?>
+										<?php echo $this->Html->link(
+											"  Play",
+											array("controller"=>"playlists", "action"=>"video_play", $pl['amazon_id'], $pl['youtube_id'] )
+										);?>
+									</div>
+								</div>
+								<div class="list_tracks">
+									<ul>
+										<?php
+											for($i=1;$i<4;$i++){
+												print "<li>[0".$i."] ".$videos[$pl['id']][$i-1]->title."</li>";
+											}
+										?>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+					
+				<?php
+					endforeach;
+				?>
+				
+				</div>
+			</div>
+		</div>	
+
+	</div>
+

@@ -1,0 +1,117 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_9 alpha">
+		<div class="grid_9 underspace main_img">
+			<?php print $this->Html->Image("home/new_main.jpg");?>
+		</div>
+		<div class="clear"></div>
+	
+		<div class="grid_9 circle">
+			<div class="grid_3 alpha" id="menu_1">
+				<?php
+					print $this->Html->link(
+						$this->Html->image("home/menu_1.jpg"),
+						array('controller'=>'playlists', 'action'=>'index'),
+						array('escape' => false)
+					);
+				?>
+				<p>	本を選んで、その本におすすめされているPlayListをさがすことができます。<br>
+					PlayListは、YouTubeの音楽ビデオを組み合わせて作成されています。<br>
+				</p>
+				<?php echo $this->Html->link( ">>音楽をさがす", array("controller"=>"playlists", "action"=>"index") );?>
+			</div>
+			<div class="grid_3" id="menu_2">
+				<?php
+					print $this->Html->link(
+						$this->Html->image("home/menu_2.jpg"),
+						array('controller'=>'addlists', 'action'=>'index'),
+						array('escape' => false)
+					);
+				?>
+				<p>	本と音楽、お気に入りの組み合わせをPlayListとして登録することができます。<br>
+					PlayListは、YouTubeの音楽ビデオを３つ選んで作成します。<br>
+				</p>
+				<?php echo $this->Html->link( ">>PlayListをつくる", array("controller"=>"addlists", "action"=>"index") );?>
+			</div>
+			<div class="grid_3 omega" id="menu_3">
+				<?php
+					print $this->Html->link(
+						$this->Html->image("home/menu_3.jpg"),
+						array('controller'=>'features', 'action'=>'haruki'),
+						array('escape' => false)
+					);
+				?>
+				<p>	特集コーナーです。本と音楽にちなんだコンテンツを用意しています。<br>
+					アーカイブから過去の特集を見ることもできます。<br>
+				</p>
+				<?php echo $this->Html->link( ">>特集コンテンツをみる", array("controller"=>"features", "action"=>"haruki") );?>
+			</div>
+		</div>
+		<div class="grid_9 underspace"></div>
+
+		<!-- 人気の本から選ぶ -->
+		<div class="grid_9">
+			<div class="middle_title">
+				<?php print $this->Html->image('playList/title_top_02.jpg');?>
+			</div>
+			<div class="gray_box top_popular">
+				<div class="carousel">
+					<div id="carousel_1" class="carousel_inner">
+						<?php foreach($new_lists as $n): ?>
+							<div class="carousel_box">
+								<?php
+									print $this->Html->link(
+										$this->Html->image($n['Playlist']['amazon_img']),
+										array('controller'=>'playlists', 'action'=>'list_search', $n['Playlist']['amazon_id']),
+										array('escape' => false)
+									);
+								?>
+							</div>
+						<?php endforeach; ?>
+					</div>
+					<div id="carousel_1_prev"><p> << </p></div>
+					<div id="carousel_1_next"><p> >> </p></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- NEWS -->
+		<div class="grid_9">
+			<div class="middle_title">
+				<?php print $this->Html->image('home/title_news.jpg');?>
+			</div>
+			<div class="gray_box top_popular news">
+				<p class="news_date">2012.11.13</p><p class="news_main">Preziで<?php print $this->Html->link("サービス紹介ピッチ", 'http://prezi.com/h_ouv64nvpp0/how-booklovesmusic-works/', array('target'=>'_blank') );?>を公開しました。</p><p class="clear"></p>
+				<p class="news_date">2012.10.12</p><p class="news_main">【障害復旧】PlayListが追加できない不具合を修正しました。</p><p class="clear"></p>
+				<p class="news_date">2012.05.19</p><p class="news_main">マイページからPlayListを編集できるようになりました。（動画の変更のみ）</p><p class="clear"></p>
+				<p class="news_date">2012.05.15</p><p class="news_main">PlayList追加機能のメンテナンスが終了しました。</p><p class="clear"></p>
+				<p class="news_date">2012.05.13</p><p class="news_main"><?php print $this->Html->link("登録された本の一覧", array('controller'=>'playlists', 'action'=>'index') );?>を見れるようになりました。</p><p class="clear"></p>
+				<p class="news_date">2012.05.10</p><p class="news_main">nanapi webでサービスの<?php print $this->Html->link("つかいかた", 'http://nanapi.jp/35362/', array('target'=>'_blank') );?>を公開しました。</p><p class="clear"></p>
+				<p class="news_date">2012.05.04</p><p class="news_main">お気に入り機能を追加しました。</p><p class="clear"></p>
+				<p class="news_date">2012.04.27</p><p class="news_main">マイページ機能を追加しました。</p><p class="clear"></p>
+				<p class="news_date">2012.04.10</p><p class="news_main">特集「村上春樹と音楽」を公開しました。</p><p class="clear"></p>
+				<!-- <p class="news_date">2012.04.01</p><p class="news_main">booklovesmusicをリリースしました！</p><p class="clear"></p> -->
+			</div>
+		</div>
+		<div class="grid_9 bigspace"></div>
+
+		<!-- バナー -->
+		<div class="grid_9 banner">
+			<!-- 春樹特集 -->
+			<?php
+				print $this->Html->link(
+					$this->Html->image("home/haruki_banner.jpg"),
+					array('controller'=>'features', 'action'=>'haruki'),
+					array('escape' => false)
+				);
+			?>
+			<!-- ブンゴウフリック -->
+			<?php
+				print $this->Html->link(
+					$this->Html->image("home/bungoflick_banner.jpg"),
+					'http://itunes.apple.com/jp/app/bungoufurikku/id489185834?mt=8',
+					array('escape' => false, 'target'=>'_blank')
+				);
+			?>
+		</div>
+	</div>
+

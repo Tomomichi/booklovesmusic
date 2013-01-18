@@ -1,0 +1,220 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('feature/haruki_top.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>	
+		
+		<!-- メインコンテンツ -->
+		<div class="grid_8 underspace">
+
+			<!-- 風の歌を聴け -->
+			<?php print $this->Html->image('feature/haruki_windsing.jpg');?>
+			<div class="grid_8 underspace"></div>	
+				<!-- 本の紹介 -->
+				<div class="feature_book underspace">
+					<a href="http://www.amazon.co.jp/gp/product/4062748703/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4062748703" target="_blank">
+						<?php print $this->Html->image('feature/book_windsing.jpg');?>
+					</a>
+					<p>
+						村上春樹のデビュー作。<br>1970年、「僕」がたどるひと夏の淡い恋と友情の物語。<br><br>
+						ジェイズ・バーを舞台に、少しだけ物憂く懐かしい夏が過ぎていく。<br>
+						明るくポップなビーチボーイズのナンバーが、<br>
+						夏の終わりを感じさせてすこしほろ苦い気持ちになります。
+					</p>
+				</div>
+				<div class="clear"></div>
+
+				<!-- PlayListの紹介 -->
+				<p class="feature_title">オススメのPlayList</p>
+				<div class="gray_box">
+					<div class="feature_contents">
+						<div class="list_image">
+							<?php echo $this->Html->link(
+								$this->Html->Image("http://img.youtube.com/vi/A0av63J-OuQ/0.jpg"),
+								array("controller"=>"playlists", "action"=>"video_play", "4062748703", "B4B811B3F86E1BE3"),
+								array('escape' => false)
+							);?>
+						</div>
+						<div class="list_attr">
+							<div class="list_title">
+								<p>鼠へのプレゼント</p>
+							</div>
+							<div class="list_play">
+								<p>bookDJ：
+									<?php echo $this->Html->link(
+										"kame_f_no7",
+										array('controller'=>'mypages', 'action'=>'index', 8)
+									);?>
+								</p>
+								<div id="play_btn">
+									<?php print $this->Html->Image("playList/play.png"); ?>
+									<?php echo $this->Html->link(
+										"  Play",
+										array("controller"=>"playlists", "action"=>"video_play",  "4062748703", "B4B811B3F86E1BE3" )
+									);?>
+								</div>
+							</div>
+							<div class="list_tracks">
+								<ul>
+									<li>[01] カリフォルニア・ガールズ</li>
+									<li>[02] ベートーベン ピアノ協奏曲第三番</li>
+									<li>[03] ア・ギャル・イン・キャリコ</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="feature_caption">
+						<p>
+							僕が鼠の誕生日プレゼントに買った3枚のレコード。たまたま入ったレコード屋で、指が4本しかない女の子と再会して購入。<br>
+							1曲目の「カリフォルニア・ガールズ」は、作品全体のテーマ曲とも言えるビーチボーイズの名曲。素敵な女の子がみんな、カリフォルニア・ガールならね。。
+							2曲目はグレン・グールドが演奏するベートーヴェンのピアノ協奏曲第3番。鼠も僕も聴いたことはなかった。
+							3曲目はマイルス・ディヴィスのギャル・イン・キャリコ。指が4本しかない女の子が探すのに少し手間取ったとか。<br>
+							レコードをもらった鼠の感想は、「はっきり言って、とても嬉しいよ」。鼠の口癖がなつかしい。。
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="grid_8 bigspace"></div>	
+				
+				
+			<!-- 1973年のピンボール -->
+			<?php print $this->Html->image('feature/haruki_pinball.jpg');?>
+			<div class="grid_8 underspace"></div>	
+				<!-- 本の紹介 -->
+				<div class="feature_book underspace">
+					<a href="http://www.amazon.co.jp/gp/product/4062749114/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4062749114" target="_blank">
+						<?php print $this->Html->image('feature/book_pinball.jpg');?>
+					</a>
+					<p>
+						「風の歌を聴け」の続編。<br>双子の女の子と暮らす僕、暗いトンネルの中に沈む鼠。<br><br>
+						全体的に静寂と調和を感じさせる雰囲気のなか、時々出てくるビートルズの楽曲が印象的。
+						晩夏の残光を惜しむような、心地よくてどこか喪失感を感じさせる感覚が魅力です。<br>
+					</p>
+				</div>
+				<div class="clear"></div>
+
+				<!-- PlayListの紹介 -->
+				<p class="feature_title">オススメのPlayList</p>
+				<div class="gray_box">
+					<div class="feature_contents">
+						<div class="list_image">
+							<?php echo $this->Html->link(
+								$this->Html->Image("http://img.youtube.com/vi/_H6PdlJshCo/0.jpg"),
+								array("controller"=>"playlists", "action"=>"video_play", "4062749114", "8E6CDEB7C490E006"),
+								array('escape' => false)
+							);?>
+						</div>
+						<div class="list_attr">
+							<div class="list_title">
+								<p>1973年のビートルズ</p>
+							</div>
+							<div class="list_play">
+								<p>bookDJ：
+									<?php echo $this->Html->link(
+										"kame_f_no7",
+										array('controller'=>'mypages', 'action'=>'index', 8)
+									);?>
+								</p>
+								<div id="play_btn">
+									<?php print $this->Html->Image("playList/play.png"); ?>
+									<?php echo $this->Html->link(
+										"  Play",
+										array("controller"=>"playlists", "action"=>"video_play",  "4062749114", "8E6CDEB7C490E006" )
+									);?>
+								</div>
+							</div>
+							<div class="list_tracks">
+								<ul>
+									<li>[01] ペニー・レイン</li>
+									<li>[02] Drive My Car</li>
+									<li>[03] I'm Looking Through You</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="feature_caption">
+						<p>
+							本作中にときどき顔をだすビートルズ。
+							1曲目の「ペニー・レイン」は、僕が共同経営する翻訳事務所の女の子が1日20回くらい口ずさむ曲（しかもサビ抜き）。<br>
+							2・3曲目はアルバム「ラバー・ソウル」から。僕の生活に闖入してきた双子の女の子が、あるときお小遣いをためてプレゼントしてくれたアルバム。驚いた僕だったが、双子が去ったあとはひとりでラバーソウルを聴くことに。。
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="grid_8 bigspace"></div>	
+
+				
+			<!-- 羊をめぐる冒険 -->
+			<?php print $this->Html->image('feature/haruki_sheep.jpg');?>
+			<div class="grid_8 underspace"></div>	
+				<!-- 本の紹介 -->
+				<div class="feature_book underspace">
+					<a href="http://www.amazon.co.jp/gp/product/4061836064/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4061836064" target="_blank">
+						<?php print $this->Html->image('feature/book_sheep.jpg');?>
+					</a>
+					<p>
+						初期3部作の完結編。<br>1982年、「僕」と「鼠」の冒険が終わる。<br><br>
+						秋の北海道で迎える青春との訣別。<br>
+						終盤の哀しく穏やかな山荘での日々に、古い音楽がよく合います。
+					</p>
+				</div>
+				<div class="clear"></div>
+
+				<!-- PlayListの紹介 -->
+				<p class="feature_title">オススメのPlayList</p>
+				<div class="gray_box">
+					<div class="feature_contents">
+						<div class="list_image">
+							<?php echo $this->Html->link(
+								$this->Html->Image("http://img.youtube.com/vi/BaXzeQoWTko/0.jpg"),
+								array("controller"=>"playlists", "action"=>"video_play", "4061836064", "4B5C37D3662E4443"),
+								array('escape' => false)
+							);?>
+						</div>
+						<div class="list_attr">
+							<div class="list_title">
+								<p>冒険のあと</p>
+							</div>
+							<div class="list_play">
+								<p>bookDJ：
+									<?php echo $this->Html->link(
+										"kame_f_no7",
+										array('controller'=>'mypages', 'action'=>'index', 8)
+									);?>
+								</p>
+								<div id="play_btn">
+									<?php print $this->Html->Image("playList/play.png"); ?>
+									<?php echo $this->Html->link(
+										"  Play",
+										array("controller"=>"playlists", "action"=>"video_play",  "4061836064", "4B5C37D3662E4443" )
+									);?>
+								</div>
+							</div>
+							<div class="list_tracks">
+								<ul>
+									<li>[01] 夏の日の恋</li>
+									<li>[02] ホワイトクリスマス</li>
+									<li>[03] エアメイル・スペシャル</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="feature_caption">
+						<p>
+							「僕」が別荘に行きついてから、鼠に再会するまでの静謐な生活の中で聴いた曲をセレクト。<br>
+							1曲目はパーシー・フェイス・オーケストラの「夏の日の恋」。彼女が去った後の別荘でひとり料理を作りながら聴いた曲。<br>
+							2曲目はビング・グロスビーの「ホワイトクリスマス」。すこしずつ状況を整理しはじめた僕は、圧倒的な孤独のなかでこの曲をオートリピートにして26回も聴いていた。<br>
+							3曲目はベニー・グッドマンの「エアメイル・スペシャル」。納屋でギターを見つけた僕がこの曲を練習していたとき、羊男がふたたび別荘にあらわれる。。
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="grid_8 bigspace"></div>	
+
+				
+		</div>
+		<div class="clear"></div>
+
+	</div>
+

@@ -1,0 +1,63 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('addList/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->image('addList/step_03.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>
+		
+		<!-- 動画表示エリア -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->Image("playList/title_play_01.jpg"); ?>
+
+			<!-- ソーシャルボタン -->
+			<?php
+				$share_url = urlencode("http://booklovesmusic.com/playlists/video_play/".$a_key."/".$y_key);
+			?>
+			<div id="pl_social">
+				<div>
+					<!--<iframe src="http://www.facebook.com/plugins/like.php?http%3a%2f%2fbooklovesmusic%2ecom%2fplaylists%2fvideo_play%2f+&amp;send=false&amp;layout=button_count&amp;width=70&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:21px;" allowTransparency="true"></iframe>-->
+					<div class="fb-like" data-title="PlayList" data-href="https://www.youtube.com/playlist?list=PL<?php echo $y_key;?>" data-url="http://booklovesmusic.com/playlists/video_play/4306050378/9C4293AA26FCD8A2" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false"></div>
+				</div>
+	    		<div>
+	    			<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://booklovesmusic.com/playlists/video_play/<?php echo $a_key;?>/<?php echo $y_key;?>" data-lang="ja" data-count="none" data-text="「<?php echo $xml->Items->Item->ItemAttributes->Title;?>」にぴったりの音楽はこれ！ #booklovesmusic">つぶやく</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+				</div>
+			</div>
+			<div class="clear underspace"></div>
+
+			<!-- ひもづく本の紹介 -->
+			<div class="play_book underspace">
+				<?php print $this->Html->image($xml->Items->Item->MediumImage->URL);?>
+				<p id="title"><?php echo $xml->Items->Item->ItemAttributes->Title;?></p>
+				<p id="caption"><?php echo $yt_xml->subtitle;?></p>
+				<p class="clear"></p>
+			</div>
+			<div class="grid_8 underspace"></div>
+
+			<!-- 動画プレイヤー -->
+			<div class="underspace">
+				<iframe width="620" height="450" src="http://www.youtube.com/embed/videoseries?list=PL<?php print $video_id;?>&amp;hl=ja_JP" frameborder="0" allowfullscreen></iframe>
+				<p
+					<?php
+						foreach($yt_xml->entry as $v){
+							//print $v->title."<br />";
+						}
+					?>
+				</p>
+			</div>
+			<div class="list_caption">
+				<!--<p><?php echo $yt_xml->subtitle;?></p>-->
+				<p class="composer">bookDJ：
+					<?php echo $this->Html->link(
+						$author['Account']['name'],
+						array('controller'=>'mypages', 'action'=>'index', $author['Account']['id'])
+					);?>
+				</p>
+			</div>
+		</div>	
+
+	</div>
+

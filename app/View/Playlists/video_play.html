@@ -1,0 +1,158 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->Image("playList/title.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->Image("playList/step_03.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace"></div>
+		
+		<!-- 動画表示エリア -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->Image("playList/title_play_01.jpg"); ?>
+
+			<!-- ソーシャルボタン -->
+			<?php
+				$share_url = urlencode("http://booklovesmusic.com/playlists/video_play/".$a_key."/".$y_key);
+			?>
+			<div id="pl_social">
+				<div>
+					<!--<iframe src="http://www.facebook.com/plugins/like.php?http%3a%2f%2fbooklovesmusic%2ecom%2fplaylists%2fvideo_play%2f+&amp;send=false&amp;layout=button_count&amp;width=70&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:21px;" allowTransparency="true"></iframe>-->
+					<div class="fb-like" data-title="PlayList" data-href="https://www.youtube.com/playlist?list=PL<?php echo $y_key;?>" data-count="none" data-url="http://booklovesmusic.com/playlists/video_play/4306050378/9C4293AA26FCD8A2" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+				</div>
+	    		<div>
+	    			<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://booklovesmusic.com/playlists/video_play/<?php echo $a_key;?>/<?php echo $y_key;?>" data-lang="ja" data-count="none" data-text="「<?php echo $xml->Items->Item->ItemAttributes->Title;?>」にぴったりの音楽はこれ！ #booklovesmusic">つぶやく</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+				</div>
+				<div>
+						<input type="hidden" id="uid_form" value="<?php if($login_flg){echo $user['Account']['id'];} ?>">
+						<input type="hidden" id="plid_form" value="<?php echo $playlist['Playlist']['id'];?>">
+						<button id="fav_btn" <?php if($fav_flg || !$login_flg){echo "disabled";}?> type="button">お気に入りに追加</button>
+				</div>
+			</div>
+			<div class="clear underspace"></div>
+
+			<!-- ひもづく本の紹介 -->
+			<div class="play_book underspace">
+				<?php
+          $a_img = $xml->Items->Item->MediumImage->URL;
+          if(!$a_img){
+            $a_img = "common/noImage.jpg";
+          }
+					$ISBN = $xml->Items->Item->ASIN;
+					print $this->Html->link(
+						$this->Html->image($a_img),
+						"http://www.amazon.co.jp/gp/product/".$ISBN."/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=".$ISBN,
+						array('escape' => false, 'target'=>'_blank')
+					);
+				?>
+				
+				<p id="title">
+					<a href="http://www.amazon.co.jp/gp/product/<?php print $ISBN;?>/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=<?php print $ISBN;?>" target="_blank">
+						<?php echo $xml->Items->Item->ItemAttributes->Title;?>
+					</a><br/>
+					<?php echo $xml->Items->Item->ItemAttributes->Author;?>
+				</p>
+				<p id="caption"><?php echo $yt_xml->subtitle;?></p>
+				<p class="clear"></p>
+			</div>
+			<div class="grid_8 underspace"></div>
+
+			<!-- 動画プレイヤー -->
+			<div class="underspace">
+				<iframe width="620" height="450" src="http://www.youtube.com/embed/videoseries?list=PL<?php print $video_id;?>&amp;hl=ja_JP" frameborder="0" allowfullscreen></iframe>
+				<p
+					<?php
+						foreach($yt_xml->entry as $v){
+							//print $v->title."<br />";
+						}
+					?>
+				</p>
+			</div>
+			<div class="list_caption">
+				<!--<p><?php echo $yt_xml->subtitle;?></p>-->
+				<p class="composer">bookDJ：
+					<?php echo $this->Html->link(
+						$playlist['Account']['name'],
+						array('controller'=>'mypages', 'action'=>'index', $playlist['Playlist']['user_id'])
+					);?>
+				</p>
+			</div>
+		</div>	
+
+		<!-- おなじbookDJのPlayList一覧 -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('playList/title_play_02.jpg');?>
+			<div class="gray_box result_index">
+				<?php if($other_lists): ?>
+				<?php
+					$count = 0;
+					foreach($other_lists as $pl):
+
+						if($count!=0){ print '<hr>';}
+						$count++;
+				?>
+						<div class="list_result">
+							<div class="list_image">
+								<?php echo $this->Html->link(
+									$this->Html->Image($pl['Playlist']['youtube_img']),
+									array("controller"=>"playlists", "action"=>"video_play", $pl['Playlist']['amazon_id'], $pl['Playlist']['youtube_id']),
+   									array('escape' => false)
+								);?>
+							</div>
+							<div class="list_attr">
+								<div class="list_title">
+									<p><?php print $pl['Playlist']['youtube_name'];?></p>
+								</div>
+								<div class="list_play">
+									<p>bookDJ：
+										<?php echo $this->Html->link(
+											$pl['Account']['name'],
+											array('controller'=>'mypages', 'action'=>'index', $pl['Playlist']['user_id'])
+										);?>
+									</p>
+									<div id="play_btn">
+										<?php print $this->Html->Image("playList/play.png"); ?>
+										<?php echo $this->Html->link(
+											"  Play",
+											array("controller"=>"playlists", "action"=>"video_play", $pl['Playlist']['amazon_id'], $pl['Playlist']['youtube_id'] )
+										);?>
+									</div>
+								</div>
+								<div class="list_tracks">
+								<!--
+									<ul>
+										<?php
+											for($i=1;$i<4;$i++){
+												print "<li>[0".$i."] ".$videos[$pl['Playlist']['id']][$i-1]->title."</li>";
+											}
+										?>
+									</ul>
+								-->
+								</div>
+							</div>
+						</div>
+						
+					
+				<?php
+					endforeach;
+				?>
+				<?php else: ?>
+					<?php print "<br>　※まだ登録したPlayListがありません";?>
+				<?php endif; ?>
+			</div>
+			<!-- Pagination -->
+			<div id="pagination">
+				<?php 
+					if($this->Paginator->numbers()){
+						echo $this->Paginator->prev('≪ Previous', null, null, array('class' => 'disabled'))."　";
+						echo $this->Paginator->numbers();
+						echo "　".$this->Paginator->next('Next ≫', null, null, array('class' => 'disabled'));
+					}
+				?>
+			</div>
+		</div>
+
+
+	</div>

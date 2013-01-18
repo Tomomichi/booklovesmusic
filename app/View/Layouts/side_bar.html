@@ -1,0 +1,93 @@
+<div class="grid_3 omega">
+	<div class="grid_3">
+		<!-- バナー -->
+		<div class="side_box underspace">
+			<?php echo $this->Html->link(
+				$this->Html->image('common/haruki_side-banner.jpg'),
+				array('controller'=>'features', 'action'=>'haruki'),
+				array('escape' => false )
+			);?>
+		</div>
+
+		<!-- 最新PlayList -->
+		<?php print $this->Html->image('common/side_title_02.jpg');?>
+		<div class="side_box underspace">
+			<?php foreach($new_lists as $n): ?>
+				<!-- サムネイル画像 -->
+				<div class="new_thum">
+					<?php echo $this->Html->link(
+						$this->Html->image( $n['Playlist']['youtube_img']),
+						array('controller'=>'playlists', 'action'=>'video_play/'.$n['Playlist']['amazon_id'].'/'.$n['Playlist']['youtube_id'] ),
+						array('escape' => false )
+					);?>
+				</div>
+				<!-- PlayListのタイトルと作成者 -->
+				<div class="new_caption">
+					<p>
+						<?php echo $this->Html->link(
+							$n['Playlist']['youtube_name'],
+							array('controller'=>'playlists', 'action'=>'video_play/'.$n['Playlist']['amazon_id'].'/'.$n['Playlist']['youtube_id'] )
+						);?><br />
+						by 
+						<?php echo $this->Html->link(
+							$n['Account']['name'],
+							array('controller'=>'mypages', 'action'=>'index', $n['Playlist']['user_id'])
+						);?>
+					</p>
+				</div>
+				<div class="clear"></div>
+			<?php endforeach; ?>
+		</div>
+
+		<!-- 注目bookDJ -->
+		<?php print $this->Html->image('common/side_title_03.jpg');?>
+		<div class="side_box underspace">
+			<?php 
+				$i = 1;
+				foreach($popDJs as $DJ): 
+			?>
+
+				<div class="rank_thum">
+					<?php 
+						$src = "common/rank_".$i.".png";
+						echo $this->Html->image("$src");
+					?>
+				</div>
+
+				<div class="new_caption">
+					<p>
+						<?php echo $this->Html->link(
+							$DJ['Account']['name'],
+							array('controller'=>'mypages', 'action'=>'index', $DJ['Account']['id'])
+						);?><br />
+						<?php echo substr($DJ['Account']['created'], 0, 10);?>
+					</p>
+				</div>
+				<div class="clear"></div>
+			<?php
+				$i++;
+				endforeach; 
+			?>
+		</div>
+		<!-- Contact -->
+		<?php print $this->Html->image('common/side_title_04.jpg');?>
+		<div class="side_box underspace">
+			<?php	echo $this->Form->textarea('contact', array('id'=>'side_contact', 'placeholder'=>'サービスの不具合報告やご要望などがあればこちらからどうぞ。') );?>
+			<?php	echo $this->Form->button('メッセージを送信', array('id'=>'side_submit', 'class'=>'submit') );?>
+			<p class="clear"></p>
+		</div>
+
+
+		<!-- 本の検索 -->
+<!--
+		<?php print $this->Html->image('common/side_title_01.jpg');?>
+		<div class="side_box underspace">
+			<?php
+				echo $this->Form->create('Playlist', array( 'type' => 'POST', 'action' => 'book_search') );
+				echo $this->Form->text('search_word', array('size'=>'15', 'id'=>'side_search', 'name'=>'keyword', 'placeholder'=>'  著者名、タイトル') );
+				echo $this->Form->submit( "検索", array('div'=>false, 'class'=>'submit') );
+			?>
+		</div>
+-->
+	</div>
+</div>

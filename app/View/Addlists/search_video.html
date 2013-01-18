@@ -1,0 +1,17 @@
+	<!-- メインコンテンツ -->
+	<?php echo $this->Html->Image("addList/title_make_02.jpg", array('class'=>'modal_title'));?>
+	<div id="vsearch_main" class="id_<?php print $num;?>">
+		<div class="modal_box">
+			<div class="modal_search">
+				<?php
+					echo $this->Form->create('searchVideo', array('id'=>'frmSearch') );
+					echo $this->Form->text('v_key', array("class"=>"modal_text", 'placeholder'=>' アーティスト名、アルバム名など'));
+					echo $this->Form->submit( "検索", array('div'=>false, 'class'=>'submit') );
+				//	echo $this->Form->submit( "playList/search_btn.jpg", array('div'=>false, 'id'=>'modal_search') );
+					echo $this->Form->end();
+				?>
+			</div>
+		</div>
+		<div id="videos"></div>
+
+	</div>

@@ -1,0 +1,24 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('account/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>
+		
+		<!-- amazonから検索 -->
+		<div class="grid_8 underspace">
+			<div class="social">
+				<!--<?php echo $this->Html->link( "<div id='facebook'></div>", array('controller'=>'accounts', 'action'=>'login/Facebook'), array('escape' => false) );?>-->
+				<div id="facebook"></div>
+				<p>facebookでログイン</p>
+			</div>
+			<div class="social">
+				<?php echo $this->Html->link( "<div id='twitter'></div>", array('controller'=>'accounts', 'action'=>'login/Twitter'), array('escape' => false) );?>
+				<p>twitterでログイン</p>
+			</div>
+		</div>	
+		<div class="clear"></div>
+
+	</div>
+
+

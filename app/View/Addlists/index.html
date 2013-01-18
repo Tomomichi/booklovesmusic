@@ -1,0 +1,30 @@
+	<!-- メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('addList/title.jpg');?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->image('addList/step_01.jpg');?>
+		</div>
+		<div class="grid_8 underspace"></div>
+		
+		<!-- amazonから検索 -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image('addList/title_top_01.jpg');?>
+			<div class="gray_box amazon_search">
+				<div class="searchBox">
+					<?php
+						echo $this->Form->create('Addlist', array( 'type' => 'POST', 'action' => 'book_search') );
+						echo $this->Form->text('search_word', array('size'=>'40', 'id'=>'search_word', 'name'=>'keyword', 'placeholder'=>' 著者名、本のタイトルなど'));
+						echo "  ";
+						echo $this->Form->submit( "検索", array('div'=>false, 'class'=>'submit') );
+						echo $this->Form->end();
+					?>
+				</div>
+			</div>
+		</div>	
+		<div class="clear"></div>
+
+	</div>
+
+

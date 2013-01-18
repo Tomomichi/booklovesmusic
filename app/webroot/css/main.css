@@ -1,0 +1,1106 @@
+/*****************************************************************
+* 共通
+*****************************************************************/
+
+.underspace {
+	margin-bottom: 10px;
+}
+
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}
+
+* {
+	margin:0;
+}
+
+body {
+	font: 80%/19px Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif !important;
+	letter-spacing: 0.1em!important;
+}
+body.default {
+	background-image: url("../img/common/texture.jpg"); 
+//	background-color: #F9F0FF;
+}
+
+.nav li {
+	list-style:none;
+}
+
+div.flash-notice {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: #66CC66 2px solid;
+    background: #F0FFF0;
+    color: #008800;
+}
+.flash-error {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: #FF6666 2px solid;
+    background: #FFF0F0;
+    color: #FF0000;
+}
+
+div.bak {
+	width: 85%;
+	margin: 0 auto;	
+	background-color: #ffffff;
+	box-shadow: 1px 0px 3px #cccccc, -1px 0px 3px #cccccc;
+	position: relative;
+}
+
+#scroll {
+	width:48px;
+	height:48px;
+	background-image: url("../img/common/top.png");
+}
+
+#search_word {
+	height: 21px;
+	margin-right: 8px;
+}
+
+.submit {
+	width: 61px;
+	height: 27px;
+    background: #629999;
+    border-radius: 5px;
+    border-style: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#play_btn {
+	width: 91px;
+	height: 37px;
+    border-radius: 7px;
+    background: #629999;
+}
+#play_btn a {
+    color: #ffffff;
+    font-size: 14pt;
+    text-decoration: none;
+    line-height: 37px;
+    text-align: center;
+}
+#play_btn img {
+	width: 25px;
+	height: 25px;
+	margin: 0 0 5px 5px;
+}
+
+.submit:hover, #play_btn:hover, .reg_btn input:hover, .add_video:hover {
+	background: #80A9A9;
+}
+
+
+/*****************************************************************
+* ヘッダー
+*****************************************************************/
+
+div.nav {
+	margin-bottom : 25px;
+}
+
+div.header {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.header img {
+	margin-top:10px;
+	float: left;
+}
+.header div {
+	margin-top: 10px;
+	float: right;
+}
+
+.header p {
+	float:left;
+	padding: 0 10px;
+}
+.header p:first-child{
+	border-right: 1px solid #ccc;
+}
+
+.header a {
+	text-decoration: none;
+}
+
+a.nav_01,a.nav_02,a.nav_03,a.nav_04,a.nav_05,a.nav_06 {
+	display: block;
+	width: 145px;
+	height: 32px;
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 32px;
+    text-decoration: none;
+    font-size: 11pt;
+	float: left;
+}
+
+a.nav_01,a.nav_02,a.nav_03,a.nav_04,a.nav_05 {
+    margin: 0 14px 0 0;
+    background: #D1C7D0;
+}
+
+a.nav_06 {
+    background: #629999;
+}
+
+a.nav_01:hover,a.nav_02:hover,a.nav_03:hover,a.nav_04:hover,a.nav_05:hover {
+    background: #B75FB3;
+}
+
+a#currentPage {
+    background: #B75FB3;
+}
+
+
+/*****************************************************************
+* Home
+*****************************************************************/
+
+
+.main_img {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+.main_img img{
+	position: relative;
+	width: 710px;
+	left: -10px;
+}
+
+.circle img {
+	width: 221px;
+	background-repeat:no-repeat;
+	margin-bottom: 10px;
+//	box-shadow: 1px 1px 3px #333 ;
+}
+
+.circle {
+	font-size: 12px;
+}
+
+.circle a{
+	display: block;
+//	text-align: right;
+}
+
+#circle_1 {
+    background: url(../img/home/circle_1.jpg);
+	background-position: left bottom;
+}
+#circle_1:hover {
+	background-position: left top;
+}
+
+#circle_2 {
+    background: url(../img/home/circle_2.jpg);
+	background-position: left bottom;
+}
+#circle_2:hover {
+	background-position: left top;
+}
+
+#circle_3 {
+    background: url(../img/home/circle_3.jpg);
+	background-position: left bottom;
+}
+#circle_3:hover {
+	background-position: left top;
+}
+
+.banner > a:first-child {
+	margin-right: 30px;
+}
+
+.news p {
+	margin: 5px 5px 0 20px;
+}
+
+.news_date, .news_main {
+	position: relative;
+	float:left;
+}
+
+.news p:nth-last-child(2) {
+	margin-bottom: 15px;
+}
+.news p:first-child, .news p:nth-child(2) {
+	margin-top: 15px;
+}
+
+/*****************************************************************
+* SideBar
+*****************************************************************/
+
+div.side_box {
+	border:solid 1px #f3f3f3 ;
+	background-color: #f3f3f3;
+	border-radius:5px;
+}
+
+.side_box input {
+	margin: 15px 5px;
+}
+
+.side_box #side_search {
+	width: 125px;
+	height: 21px;
+	margin-right: 5px;
+}
+
+.new_thum {
+	float:left;
+	width: 70px;
+	left: 10px;
+	margin: 10px 8px 10px 12px;
+}
+.new_thum img {
+	width: 70px;
+}
+.new_caption {
+	float:left;
+	width: 120px;
+	margin-top:10px;
+}
+
+.rank_thum {
+	float:left;
+	width: 50px;
+	left: 10px;
+	margin: 10px 8px 10px 12px;
+}
+.rank_thum img {
+	width: 50px;
+}
+
+#side_contact {
+	width: 190px;
+	height: 150px;
+	margin: 10px;
+}
+#side_submit {
+	width: 196px;
+	height: 35px;
+    background: #629999;
+    border-radius: 5px;
+    border-style: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+
+	margin: 0 10px 10px 10px;
+}
+#side_submit:hover {
+	background: #80A9A9;
+}
+
+/*****************************************************************
+* SearchTop
+*****************************************************************/
+
+.top_nav{
+	margin-bottom: 30px;
+}
+
+div.gray_box {
+	border:solid 1px #d3d3d3 ;
+	border-radius:10px;
+}
+
+div.amazon_search {
+	height: 50px;
+}
+
+div.popular_books {
+	height: 200px;
+}
+
+div.popular_books div {
+	width:130px;
+	margin:30px 0 5px 10px;
+	float:left;
+}
+
+div.popular_books img {
+	height:100px;
+}
+
+div.searchBox {
+	position: relative;
+	top: 10px;
+	left: 30px;
+}
+
+div.searchBox p {
+	margin-top:5px;
+	font-size: 9px;
+	font-family: 'メイリオ';
+	color:#666666;
+}
+
+.middle_title {
+	margin-top:25px;
+}
+
+.pl_banner img {
+	width: 300px;
+}
+.pl_banner img:first-child {
+	margin-right: 7px;
+}
+
+
+/*****************************************************************
+* SearchTopのリボン効果
+*****************************************************************/
+.side-corner-tag {
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+} 
+ 
+.side-corner-tag p {
+    display: inline;
+}
+
+.side-corner-tag p span {
+    position: absolute;
+    display: inline-block;
+//    right: -25px;
+    right: -30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2), inset 0px 5px 30px rgba(255,255,255,0.2);
+    text-align: center;
+    text-transform: uppercase;
+//    top: 22px;
+    top: 10px;
+    background: #d93131;
+    width: 80px;
+    padding: 3px 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+
+.side-corner-tag p:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+//    top: -17px;
+    top: 10px;
+    right: 69px;
+    z-index: -1;
+    border: 17px solid;
+    border-color: transparent transparent #662121 transparent;
+}
+ 
+.side-corner-tag p:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+//    top: 74px;
+    top: 10px;
+    z-index: -1;
+    right: -10px;
+    border: 17px solid;
+    border-color: #662121 transparent transparent transparent;
+}
+
+
+
+/*****************************************************************
+* SearchResult
+*****************************************************************/
+
+div.result_index {
+//	height:100%;
+	padding-bottom: 10px;
+}
+
+div.book_result {
+	float:left;
+	margin:10px;
+	width:100%;
+	height:100px;
+}
+
+div.book_image {
+	float:left;
+	width:100px;
+	text-align:center;
+}
+
+div.book_image img {
+	height: 100px;
+}
+
+div.book_attr {
+	float:left;
+	width:170px;
+}
+
+div.detail_nav {
+	float:left;
+	position:relative;
+	left:5px;
+	cursor:pointer;
+}
+
+div.detail_nav img#show {
+	display:show;
+}
+div.detail_nav img#hide {
+	display:none;
+}
+
+div.book_detail {
+	width:290px;
+	height:101px;
+    background: url(http://cahier-sauvage.boo.jp/blm/img/common/detail_bak.jpg);
+	background-repeat: no-repeat;
+	float:left;
+	position:relative;
+	left:10px;
+	display:none;
+	padding: 7px 0 7px 0;
+}
+
+
+div.book_detail img {
+	position:relative;
+	left:7px;
+	margin: 0 5px 0 0;
+}
+
+hr {
+    border: #d3d3d3 1px dashed;
+    width: 95%;
+    margin-left:15px;
+}
+
+
+/*****************************************************************
+* ListIndex
+*****************************************************************/
+
+div.list_result {
+	margin:10px 10px 20px 10px;
+	width:100%;
+	height:100px;
+}
+
+.list_image {
+	width:150px;
+	height:100%;
+	float:left;
+	margin-right:20px;
+	margin-top:auto;
+	margin-bottom:auto;
+	text-align:center;
+}
+
+.list_image img {
+	width:150px;
+}
+
+.list_attr {
+	width:70%;
+	position: relative;
+	float:left;
+}
+
+.list_title {
+	width:100%;
+	height:15px;
+	margin:5px 0 10px 0;
+}
+.list_title p {
+	margin-bottom:15px;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.list_play {
+	float:left;
+	width:20%;
+	margin-right:20px;
+}
+.list_play img {
+	margin:0;
+}
+.list_play p {
+	margin:0px 20px 20px 0;
+	font-size:9px;
+	color:#666666;
+	width: 200px;
+}
+
+.list_tracks {
+	float:left;
+	width:60%;
+	margin-top:20px;
+	margin-left:20px;
+}
+
+.list_tracks li {
+	list-style:square;
+	line-height:20px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+
+/*****************************************************************
+* videoPlay
+*****************************************************************/
+
+.play_book img {
+	float:left;
+	margin-right: 15px;
+}
+
+.play_book #title {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#pl_social div{
+	float: right;
+}
+
+.list_book {
+	margin-left: 10px;
+}
+.list_book img {
+	margin-bottom: 5px;
+}
+
+#fav_btn {  
+	width: 100px;
+	height: 20px;
+    border-top: 1px solid #ccc;  
+    border-right: 1px solid #999;  
+    border-bottom: 1px solid #999;  
+    border-left: 1px solid #ccc;  
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;  
+    -webkit-box-shadow: 1px 1px 2px #E7E7E7;  
+    -moz-box-shadow: 1px 1px 2px #E7E7E7;  
+    margin-right: 5px;
+    white-space:nowrap;
+}  
+
+#fav_btn:hover {
+    border-top: 1px solid #aaa;
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #aaa;
+}
+
+#fav_btn:disabled {  
+	width: 100px;
+	height: 20px;
+    border-top: 1px solid #ccc;  
+    border-right: 1px solid #999;  
+    border-bottom: 1px solid #999;  
+    border-left: 1px solid #ccc;  
+    font-size: 10px;
+    font-weight: bold;
+    cursor: default;
+    color: #aaa;
+    background: #fff;
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    text-shadow: 0;
+    -webkit-box-shadow: 1px 1px 2px #E7E7E7;  
+    -moz-box-shadow: 1px 1px 2px #E7E7E7;  
+    margin-right: 5px;
+}
+
+/*****************************************************************
+* addList
+*****************************************************************/
+
+.search_result {
+	height:150px;
+}
+
+.modal_title {
+	position:relative;
+	left:50px;
+	margin-bottom:15px;
+}
+
+.video_thumb {
+	position:relative;
+	left:50px;
+	float:left;
+	width:200px;
+}
+
+.video_thumb img {
+	width:150px;
+}
+
+.video_caption {
+	position:relative;
+	left:10px;
+	float:left;
+	width:400px;
+}
+
+.video_caption p, .video_caption h4{
+	margin: 0 0 10px 0;
+}
+
+.edit_list {
+	margin:20px 0 0 20px;
+}
+
+.edit_list p {
+	margin: 5px 0 0 0;
+}
+
+.edit_list div {
+	margin:15px 0;
+}
+
+.edit_title input {
+	width:90%;
+	height:25px;
+}
+
+/*
+.edit_tracks img{
+	margin-right:10px;
+	width:170px;
+	cursor:pointer;
+}
+.edit_listtracks img {
+	margin-right:10px;
+	width:170px;
+	cursor:pointer;
+}
+*/
+.edit_tracks img, .edit_listtracks img{
+	margin-right:10px;
+	width:170px;
+	cursor:pointer;
+}
+
+
+.edit_caption textarea{
+	width:90%;
+	height:100px;
+}
+
+.reg_btn input {
+	margin-top:20px;
+	width: 184px;
+	height: 45px;
+    background: #629999;
+    border-radius: 7px;
+    border-style: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+div.edit_listtracks {
+	float:left;
+	margin-right:20px;
+}
+
+div.edit_listcaption {
+	float:left;
+}
+
+div.edit_listcaption textarea {
+	width:350px;
+	height:120px;
+}
+
+.add_list {
+	cursor:pointer;
+}
+
+.add_video {
+	width: 140px;
+	height: 33px;
+    background: #629999;
+    border-radius: 5px;
+    border-style: none;
+    color: #ffffff;
+    line-height: 33px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+ul.video_box li {
+	position:relative;
+	float: left;
+	z-index:1;
+	width:172px;
+	height:123px;
+	margin-right: 12px;
+	margin-bottom: 15px;
+	background-repeat: no-repeat;
+}
+#v_box01 {
+	background: url("../img/addList/video_01.jpg");
+}
+#v_box02 {
+	background: url("../img/addList/video_02.jpg");
+}
+#v_box03 {
+	background: url("../img/addList/video_03.jpg");
+}
+
+ul.video_box li img {
+	position: absolute;
+	width:172px;
+	height:123px;
+	left:0px;
+	z-index: -1;
+}
+
+ul.video_box li a {
+	display: block;
+	float: left;
+	width: 172px;
+	height: 123px;
+	cursor: pointer;
+}
+ul.video_box li a p {
+	font-size: 30px;
+	text-align: center;
+	line-height: 32px;
+	color: white;
+	margin-top:12px;
+}
+
+
+/*****************************************************************
+* ListIndex
+*****************************************************************/
+
+.composer {
+	text-align: right;
+}
+
+/*****************************************************************
+* アカウント
+*****************************************************************/
+
+.social {
+	margin-left:50px;
+	margin-top: 30px;
+	margin-right: 50px;
+	text-align: center;
+	float:left;
+}
+.social p {
+	margin-top: 10px;
+}
+
+#facebook, #twitter {
+	width: 194px;
+	height: 194px;
+	border-radius: 97px;
+	background-color: #000000;
+}
+
+#twitter {
+	background-image: url("../img/account/twitter.png");
+}
+#twitter:hover {
+	background-color: #555555;
+}
+
+#facebook {
+	background-image: url("../img/account/facebook.png");
+	
+	background-color: #dddddd;
+}
+#facebook:hover {
+//	background-color: #555555;
+}
+
+/*****************************************************************
+* modal Window
+*****************************************************************/
+
+.modal_title {
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+div.modal_box {
+	position: relative;
+	left:50px;
+	width:550px;
+	border:solid 1px #d3d3d3 ;
+	border-radius:5px;
+	margin-bottom: 20px;
+}
+
+div.modal_search {
+	margin: 15px 20px;
+}
+
+.modal_text {
+	position: relative;
+	width: 300px;
+	height: 21px;
+	margin-right: 12px;
+}
+
+#modal_search {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#frmSearch {
+	height:27px;
+}
+
+
+/*****************************************************************
+* フッター
+*****************************************************************/
+
+div.footer {
+	position: relative;
+	margin: auto;
+	margin-top: 100px;
+	background-color:#000;
+//	width:940px;
+	width:100%;
+	height: 50px;
+	box-shadow: 1px 0px 3px #cccccc, -1px 0px 3px #cccccc;
+}
+
+div.footer p {
+	text-align:center;
+	color:#a3a3a3;
+}
+
+div.footer a {
+	line-height:50px;
+	text-align:center;
+	text-decoration:none;
+	color:#ffffff
+}
+
+img#pl_thumb {
+	width:200px;
+	height:100px;
+}
+
+#toTop {
+	position: absolute;
+	right: 40px;
+	top: -40px;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	background: #000;
+}
+
+#toTop p {
+	margin-top: 15px;
+	cursor: pointer;
+	color: #fff;
+//	white-space: nowrap;
+}
+
+
+/*****************************************************************
+* 特集
+*****************************************************************/
+
+.feature_book {
+	height: 150px;
+}
+
+.feature_book img, .feature p{
+	float: left;
+}
+
+.feature_book img{
+	margin-right: 25px;
+//	width: 120px;
+	height: 120px;
+}
+
+p.feature_title {
+	font-size: 14px;
+	margin-bottom: 0px;
+}
+
+div.feature_contents {
+	margin:15px;
+	width:100%;
+	height:100px;
+}
+
+.feature_caption {
+	font-size: 11px;
+	margin: 25px 15px;
+}
+
+.bigspace {
+	margin-top: 50px;
+}
+
+
+/*****************************************************************
+* MyPage
+*****************************************************************/
+
+#profile {
+	margin-left: 10px;
+}
+
+#pagination {
+	text-align: center;
+}
+
+#edit_btn {
+	position: absolute;
+	right: 10px;
+}
+#edit_btn a:nth-child(2) {
+	margin-top: 3px;
+	text-decoration: none;
+}
+#edit_btn div {
+	margin-left: 5px;
+	float:left;
+}
+
+/*****************************************************************
+* カルーセル
+*****************************************************************/
+
+.top_popular div{
+	margin: 10px 0;
+}
+
+
+#carousel_1 {
+	width: 500px;
+	height: 150px;
+	overflow: hidden;
+}
+
+#carousel_1 .carousel_box {
+	float: left;
+	width: 120px;
+	height: 120px;
+}
+
+.carousel_box img {
+//	width: 120px;
+	height: 120px;
+}
+
+#carousel_1_prev, #carousel_1_next {
+	height: 120px;
+	width: 20px;
+	background: #000000;
+	color: #ffffff;
+	position: absolute;
+	border-radius: 3px;
+	cursor: pointer;
+	font-family: 'Droid Sans', sans-serif;
+}
+#carousel_1_prev:hover, #carousel_1_next:hover {
+	background: #444444;
+}
+
+#carousel_1_prev {
+	left: 30px;
+	top: 20px;	
+}
+#carousel_1_next {
+	right: 20px;
+	top: 20px;	
+}
+
+#carousel_1_prev p, #carousel_1_next p {
+	line-height: 120px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.carousel {
+	position: relative;
+}
+
+
+/*****************************************************************
+* ソーシャルボタン
+*****************************************************************/
+
+#social {
+	position: fixed;
+	right: 0.5%;
+	top: 30px;
+	width: 80px;
+	height: 150px;
+	background: #555555;
+//	border: double 1px #cccccc;
+	border-radius: 5px;
+}
+
+#social div {
+	margin: 10px 0 0 5px;
+}
+
+
+/*****************************************************************
+* jQuery Masonry
+*****************************************************************/
+
+#container {  
+    width: 600px; 
+    height: 700px;
+    padding: 10px;  
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}  
+.box {  
+    width: 100px;
+    margin: 10px;
+    float: left;  
+    display: inline;  /* IE6 fix */
+}  
+.box img {
+	width: 100px;
+}
+
+
+
+

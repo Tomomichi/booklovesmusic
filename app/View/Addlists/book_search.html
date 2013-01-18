@@ -1,0 +1,80 @@
+	<!-- 	メインコンテンツ -->
+	<div class="grid_8 alpha suffix_1">
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image("addList/title.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace top_nav">
+			<?php print $this->Html->image("addList/step_01.jpg"); ?>
+		</div>
+		<div class="grid_8 underspace"></div>
+		
+		<!-- 検索結果 -->
+		<div class="grid_8 underspace">
+			<?php print $this->Html->image("addList/title_book_01.jpg"); ?>
+			<div class="gray_box result_index">
+				<?php
+					$Items = $xml->Items->Item;
+					$count = 0;
+					foreach($Items as $i):
+
+						$title = $i->ItemAttributes->Title;
+						$img = $i->SmallImage->URL;
+						
+						//登録された写真がないときの処理
+						if(!$img){
+//							$img = $this->Html->webroot(IMAGE_PATH."addList/himatotaikutu.jpg");
+						}
+						
+						$author = $i->ItemAttributes->Author;
+						$ISBN = $i->ItemAttributes->ISBN;
+
+						if($count!=0){ print '<hr>';}
+						$count++;
+				?>	
+					
+						<div class="book_result">
+							<div class="book_image">
+								<img src="<?php print $img;?>">
+							</div>
+							<div class="book_attr">
+								<a href="../list_search/<?php print $ISBN;?>">
+									<?php print $title;?>
+								</a><br />
+								<p>
+									<?php print $author;?>
+								</p>
+							</div>
+							<div class="detail_nav" id="id_<?php print $count;?>">
+								<?php print $this->Html->image("common/detail_show.jpg", array("id"=>"show")); ?>
+								<?php print $this->Html->image("common/detail_hide.jpg", array("id"=>"hide")); ?>
+							</div>
+							<div class="book_detail id_<?php print $count;?>">
+								<?php
+									print $this->Html->link(
+										$this->Html->image("common/detail_action_01.jpg"),
+										array('controller'=>'playlists', 'action'=>'list_search', $ISBN),
+    									array('escape' => false)
+									);
+								?>
+								<?php
+									print $this->Html->link(
+										$this->Html->image("common/detail_action_02.jpg"),
+										array('controller'=>'addlists', 'action'=>'make_list', $ISBN),
+    									array('escape' => false)
+									);
+								?>
+								<a href="http://www.amazon.co.jp/gp/product/<?php print $ISBN;?>/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=bookmentoring-22&linkCode=as2&camp=247&creative=1211&creativeASIN=<?php print $ISBN;?>" target="_blank">
+									<?php print $this->Html->image("playList/detail_action_03.jpg"); ?>
+								</a>
+							</div>
+						</div>
+						<div class="clear"></div>
+					
+				<?php
+					endforeach;
+				?>
+			</div>
+		</div>	
+	</div>
+
+

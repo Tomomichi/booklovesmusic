@@ -1,0 +1,73 @@
+	<!-- HEADER -->
+    <div data-role="header" data-add-back-btn="true" data-position="fixed">
+        <h1>Select Book</h1>
+    </div>
+
+	<!-- CONTENT -->
+    <div data-role="content">
+		<h2>本の一覧からさがす</h2>
+
+		<div class="ui-grid-b">
+			<?php 
+				$i = 0;	//カウンタ
+				foreach($books as $book):
+			?>
+				<?php if($book['Playlist']['amazon_img']): ?>
+					<?php
+						switch($i%3){
+							case 0: 
+								$type = "a";
+								break;
+							case 1:
+								$type = "b";
+								break;
+							case 2:
+								$type = "c";
+								break;
+					} ?>
+				
+					   <div class="ui-block-<?php echo $type;?>">
+							<?php
+								print $this->Html->link(
+									$this->Html->image($book['Playlist']['amazon_img']),
+									array('controller'=>'playlists', 'action'=>'list_search', $book['Playlist']['amazon_id']),
+									array('escape' => false)
+								);
+							?>
+						</div>
+				<?php endif; ?>
+			<?php
+				$i++;
+				endforeach; 
+			?>
+		</div>
+
+
+
+
+
+
+<!--
+    	<ul data-role="listview"  data-inset="true">
+			<?php foreach($books as $book):?>
+				<?php if($book['Playlist']['amazon_img']): ?>
+					<li>
+						<a href="<?php echo $this->Html->APP_ROOT; ?>/blm_dev/playlists/list_search/<?php echo $book['Playlist']['amazon_id'];?>" >
+							<?php echo $this->Html->image($book['Playlist']['amazon_img']);?>
+							<?php pr($book['Playlist']); ?>
+						</a>
+
+						<?php
+							print $this->Html->link(
+								$this->Html->image($book['Playlist']['amazon_img']),
+								array('controller'=>'playlists', 'action'=>'list_search', $book['Playlist']['amazon_id']),
+								array('escape' => false)
+							);
+						?>
+					</li>
+				<?php endif; ?>
+			<?php endforeach; ?>
+    	</ul>
+-->
+    </div>
+

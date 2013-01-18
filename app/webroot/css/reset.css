@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/*-----reset-----*/
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, dl, dt, dd,
+table, tr, th, td, address, form,
+blockquote, pre, code{
+	margin:0;
+	padding:0;
+	border:none;
+	list-style:none;
+	font-size:100%;
+}
+
+/*-----------------------------------------*/
+
+
+body{
+	font-family:"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+	/font-family:"メイリオ", "ＭＳ Ｐゴシック", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;	/*forIE*/
+	font-size:75%;	
+	line-height:1.5;
+	color:#555555;/*fontカラー*/
+	text-align:left;
+}
+
+h1, h2, h3, h4, h5, h6{ font-size:100%;}
+
+
+table{
+	border-collapse:separate;
+	border-spacing:0;
+}
+
+img{
+	border:none;
+	vertical-align:bottom;
+}
+
+/* hr 要素は不可視で使う */
+//hr { display: none; }
+
+/*クリック時の点線なし*/
+a {	outline: none; }
+
+
+/*-----リンク設定--------------------------------*/
+a,
+a:link{ /*未訪問のリンク*/
+//	text-decoration: none;
+//	color:#555555;
+}
+
+a:visited{ /*訪問後のリンク*/
+//	text-decoration: none;
+//	color:#555555;
+}
+	
+a:hover{ /*マウスをのせたとき*/
+//	text-decoration: none;
+	color:#FF6699;
+}
+
+
+/*-----------------------------------------------*/
+	
