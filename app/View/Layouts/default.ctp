@@ -16,6 +16,7 @@
 
 	<link rel="icon" href="<?php echo $this->Html->webroot('favicon.ico');?>" type="image/x-icon" />
 
+	<meta name="detectify-verification" content="9f41ee7921b1fc5886477acc18285365" />
 	<meta property="og:title" content="読書にぴったりの音楽おすすめサービス booklovesmusic" />
 	<meta property="og:type" content="activity" />
 	<meta property="og:url" content="http://booklovesmusic.com" />
