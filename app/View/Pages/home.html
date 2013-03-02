@@ -4,7 +4,7 @@
 			<?php print $this->Html->Image("home/new_main.jpg");?>
 		</div>
 		<div class="clear"></div>
-	
+
 		<div class="grid_9 circle">
 			<div class="grid_3 alpha" id="menu_1">
 				<?php
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- NEWS -->
 		<div class="grid_9">
 			<div class="middle_title">
@@ -109,6 +109,17 @@
 				print $this->Html->link(
 					$this->Html->image("home/bungoflick_banner.jpg"),
 					'http://itunes.apple.com/jp/app/bungoufurikku/id489185834?mt=8',
+					array('escape' => false, 'target'=>'_blank')
+				);
+			?>
+		</div>
+		<!-- バナー -->
+		<div class="grid_9 banner">
+			<!-- 百/一 -->
+			<?php
+				print $this->Html->link(
+					$this->Html->image("home/hyaku-1_banner.jpg"),
+					'http://hyaku-1.eure-ka.me',
 					array('escape' => false, 'target'=>'_blank')
 				);
 			?>

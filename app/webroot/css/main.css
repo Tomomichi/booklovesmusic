@@ -18,7 +18,7 @@ body {
 	letter-spacing: 0.1em!important;
 }
 body.default {
-	background-image: url("../img/common/texture.jpg"); 
+	background-image: url("../img/common/texture.jpg");
 //	background-color: #F9F0FF;
 }
 
@@ -43,7 +43,7 @@ div.flash-notice {
 
 div.bak {
 	width: 85%;
-	margin: 0 auto;	
+	margin: 0 auto;
 	background-color: #ffffff;
 	box-shadow: 1px 0px 3px #cccccc, -1px 0px 3px #cccccc;
 	position: relative;
@@ -220,6 +220,10 @@ a#currentPage {
 	margin-right: 30px;
 }
 
+.banner {
+	margin-bottom: 15px;
+}
+
 .news p {
 	margin: 5px 5px 0 20px;
 }
@@ -369,8 +373,8 @@ div.searchBox p {
     overflow: hidden;
     font-family: Arial, sans-serif;
     font-weight: 900;
-} 
- 
+}
+
 .side-corner-tag p {
     display: inline;
 }
@@ -406,7 +410,7 @@ div.searchBox p {
     border: 17px solid;
     border-color: transparent transparent #662121 transparent;
 }
- 
+
 .side-corner-tag p:after {
     content: "";
     width: 0;
@@ -589,25 +593,25 @@ div.list_result {
 	margin-bottom: 5px;
 }
 
-#fav_btn {  
+#fav_btn {
 	width: 100px;
 	height: 20px;
-    border-top: 1px solid #ccc;  
-    border-right: 1px solid #999;  
-    border-bottom: 1px solid #999;  
-    border-left: 1px solid #ccc;  
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #ccc;
     font-size: 10px;
     font-weight: bold;
     cursor: pointer;
-    color: #666;  
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
-    text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;  
-    -webkit-box-shadow: 1px 1px 2px #E7E7E7;  
-    -moz-box-shadow: 1px 1px 2px #E7E7E7;  
+    color: #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+    -webkit-box-shadow: 1px 1px 2px #E7E7E7;
+    -moz-box-shadow: 1px 1px 2px #E7E7E7;
     margin-right: 5px;
     white-space:nowrap;
-}  
+}
 
 #fav_btn:hover {
     border-top: 1px solid #aaa;
@@ -616,23 +620,23 @@ div.list_result {
     border-left: 1px solid #aaa;
 }
 
-#fav_btn:disabled {  
+#fav_btn:disabled {
 	width: 100px;
 	height: 20px;
-    border-top: 1px solid #ccc;  
-    border-right: 1px solid #999;  
-    border-bottom: 1px solid #999;  
-    border-left: 1px solid #ccc;  
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #ccc;
     font-size: 10px;
     font-weight: bold;
     cursor: default;
     color: #aaa;
     background: #fff;
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     text-shadow: 0;
-    -webkit-box-shadow: 1px 1px 2px #E7E7E7;  
-    -moz-box-shadow: 1px 1px 2px #E7E7E7;  
+    -webkit-box-shadow: 1px 1px 2px #E7E7E7;
+    -moz-box-shadow: 1px 1px 2px #E7E7E7;
     margin-right: 5px;
 }
 
@@ -839,7 +843,7 @@ ul.video_box li a p {
 
 #facebook {
 	background-image: url("../img/account/facebook.png");
-	
+
 	background-color: #dddddd;
 }
 #facebook:hover {
@@ -1041,11 +1045,11 @@ div.feature_contents {
 
 #carousel_1_prev {
 	left: 30px;
-	top: 20px;	
+	top: 20px;
 }
 #carousel_1_next {
 	right: 20px;
-	top: 20px;	
+	top: 20px;
 }
 
 #carousel_1_prev p, #carousel_1_next p {
@@ -1084,19 +1088,19 @@ div.feature_contents {
 * jQuery Masonry
 *****************************************************************/
 
-#container {  
-    width: 600px; 
+#container {
+    width: 600px;
     height: 700px;
-    padding: 10px;  
+    padding: 10px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
-}  
-.box {  
+}
+.box {
     width: 100px;
     margin: 10px;
-    float: left;  
+    float: left;
     display: inline;  /* IE6 fix */
-}  
+}
 .box img {
 	width: 100px;
 }
