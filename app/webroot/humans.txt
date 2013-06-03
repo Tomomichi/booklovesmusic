@@ -1,0 +1,19 @@
+# TXT for Human Beings
+
+## SITE
+
+- Name : booklovesmusic
+- Pronounciation : ブック・ラブズ・ミュージック
+- URL : http://booklovesmusic.com/
+- Markup : HTML5+CSS3
+- Technology : CakePHP
+- Contents : Music recommendation for your comfortable reading life.
+- Release Date : 2012/04/01
+
+## PERSONAL
+
+- Name : Tomomichi Onishi
+- Job : Web Developer, CEO of NEHAN,LLC.
+- Twitter : @kame_f_no7
+- Mail : tomomichi.onishi@gmail.com
+- Favorite : Books, Web, Zen Buddhism
